@@ -26,6 +26,10 @@ export default function useCollection({ id }: { id: string }) {
         }
         setHasMore(res.data?.next_page ? true : false);
       });
+
+    return () => {
+      if (cancel) cancel();
+    };
   }, [page]);
 
   return { setPage, collection, hasMore };

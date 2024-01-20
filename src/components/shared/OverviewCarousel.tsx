@@ -1,7 +1,6 @@
 import {
   Carousel,
   CarouselContent,
-  type CarouselApi,
   CarouselItem,
 } from "@/components/ui/carousel";
 import { useEffect, useRef, useState } from "react";
@@ -187,7 +186,7 @@ function CollectionsBanner() {
 const currentTimeout = signal<NodeJS.Timeout | null>(null);
 const cameFromTimeout = signal<boolean>(false);
 export default function OverviewCarousel() {
-  const [api, setApi] = useState<CarouselApi>();
+  const [api, setApi] = useState<any>();
   const scrollRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
