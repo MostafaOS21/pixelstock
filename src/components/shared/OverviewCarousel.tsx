@@ -59,7 +59,7 @@ function BannerLayout({
 }
 
 function ImagesBanner() {
-  const path = "src/assets/images/photo-banner-";
+  const path = "assets/images/photo-banner-";
   let content = [];
 
   for (let i = 1; i <= 6; i++) {
@@ -89,7 +89,7 @@ function ImagesBanner() {
 }
 
 function VideosBanner() {
-  const vidPath = "src/assets/videos/video-banner-";
+  const vidPath = "assets/videos/video-banner-";
   let content = [];
   for (let i = 1; i <= 6; i++) {
     const videoPath = `${vidPath}${i}.mp4`;
@@ -127,12 +127,12 @@ function VideosBanner() {
 
 function CollectionsBanner() {
   const collectionPaths = [
-    "src/assets/images/collection-banner-1.jpg",
-    "src/assets/videos/collection-banner-2.mp4",
-    "src/assets/images/collection-banner-3.jpg",
-    "src/assets/images/collection-banner-4.jpg",
-    "src/assets/videos/collection-banner-5.mp4",
-    "src/assets/videos/collection-banner-6.mp4",
+    "assets/images/collection-banner-1.jpg",
+    "assets/videos/collection-banner-2.mp4",
+    "assets/images/collection-banner-3.jpg",
+    "assets/images/collection-banner-4.jpg",
+    "assets/videos/collection-banner-5.mp4",
+    "assets/videos/collection-banner-6.mp4",
   ];
   let content = [];
 
