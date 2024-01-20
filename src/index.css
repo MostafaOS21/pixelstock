@@ -164,19 +164,13 @@
 
   /* Masonry */
   .masonry {
-    @apply mx-auto  md:columns-[300px] lg:columns-[320px] mb-5;
+    @apply mx-auto  columns-1 lg:columns-2 xl:columns-3 mb-5;
     column-gap: 20px;
     break-inside: avoid;
   }
 
   .masonry > a {
-    @apply flex mx-auto md:mx-0 w-[330px] md:w-[320px];
-  }
-
-  @media (min-width: 1024px) {
-    .masonry a {
-      @apply w-full;
-    }
+    @apply flex mx-auto md:mx-0 w-full;
   }
 
   /* Mobile Nav */
