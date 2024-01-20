@@ -7,7 +7,6 @@ import { useEffect, useRef, useState } from "react";
 import { Card, CardContent } from "../ui/card";
 import { Link } from "react-router-dom";
 import { Button } from "../ui/button";
-import { signal } from "@preact/signals-react";
 import { IoIosArrowRoundForward } from "react-icons/io";
 
 function BannerLayout({
@@ -26,8 +25,8 @@ function BannerLayout({
   darkColor?: string;
 }) {
   return (
-    <div className="relative h-full w-full">
-      <div className="banner-layout">{children}</div>
+    <div className="relative h-[380px] xl:h-[430px] rounded-3xl overflow-hidden w-full">
+      <div className="banner-layout h-[100px] overflow-hidden">{children}</div>
       <div
         className={
           `absolute bg-gradient-to-t xl:bg-gradient-to-r  from-20% via-20% left-0 top-1/2 -translate-y-1/2 h-[102%]
@@ -183,8 +182,6 @@ function CollectionsBanner() {
   );
 }
 
-const currentTimeout = signal<NodeJS.Timeout | null>(null);
-const cameFromTimeout = signal<boolean>(false);
 export default function OverviewCarousel() {
   const [api, setApi] = useState<any>();
   const scrollRef = useRef<HTMLDivElement>(null);
@@ -208,37 +205,13 @@ export default function OverviewCarousel() {
     });
   }, [api]);
 
-  // Handle Scroll bar
-  const handleScroll = (e: React.UIEvent<HTMLDivElement>) => {
-    if (currentTimeout.value) clearTimeout(currentTimeout.value);
-    if (cameFromTimeout.value) return (cameFromTimeout.value = false);
-
-    const { currentTarget: target } = e;
-    const horizontalScrollValue = target.scrollLeft;
-
-    currentTimeout.value = setTimeout(() => {
-      if (horizontalScrollValue <= 93) {
-        api?.scrollTo(0);
-        target.scrollTo(0, 0);
-      } else if (horizontalScrollValue <= 187) {
-        api?.scrollTo(1);
-        target.scrollTo(140, 0);
-      } else if (horizontalScrollValue <= 280) {
-        api?.scrollTo(2);
-        target.scrollTo(280, 0);
-      }
-
-      cameFromTimeout.value = true;
-    }, 250);
-  };
-
   return (
     <>
-      <div className="p-3 h-[500px]">
+      <div className="p-5 h-fit">
         <Carousel className="max-w-xl mx-auto" setApi={setApi}>
           <CarouselContent>
             <CarouselItem className="carousel-item">
-              <div className="p-1 h-full">
+              <div className="h-fit">
                 <Card className="h-full border-0">
                   <CardContent className="p-0 flex items-center justify-center h-full overflow-hidden rounded-3xl">
                     <ImagesBanner />
@@ -247,7 +220,7 @@ export default function OverviewCarousel() {
               </div>
             </CarouselItem>
             <CarouselItem className="carousel-item">
-              <div className="p-1 h-full">
+              <div className="h-fit">
                 <Card className="h-full border-0">
                   <CardContent className="p-0 flex items-center justify-center h-full overflow-hidden rounded-3xl">
                     <VideosBanner />
@@ -256,7 +229,7 @@ export default function OverviewCarousel() {
               </div>
             </CarouselItem>
             <CarouselItem className="carousel-item">
-              <div className="p-1 h-full">
+              <div className="h-fit">
                 <Card className="h-full border-0">
                   <CardContent className="p-0 flex items-center justify-center h-full overflow-hidden rounded-3xl">
                     <CollectionsBanner />
@@ -266,9 +239,6 @@ export default function OverviewCarousel() {
             </CarouselItem>
           </CarouselContent>
         </Carousel>
-      </div>
-      <div className="carousel-slider" onScroll={handleScroll} ref={scrollRef}>
-        <div></div>
       </div>
     </>
   );

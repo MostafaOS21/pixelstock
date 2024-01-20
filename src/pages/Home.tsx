@@ -45,6 +45,8 @@ export default function Home() {
   return (
     <>
       <OverviewCarousel />
+      <br />
+      <br />
       <section>
         <div>
           {/* Photos */}

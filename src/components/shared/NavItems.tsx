@@ -28,7 +28,7 @@ export default function NavItems() {
         return (
           <Button
             variant={"ghost"}
-            className={`rounded-full hover:bg-white-50 dark:hover:bg-yellow-900 text-base font-normal !p-0 h-fit ${
+            className={`rounded-full hover:bg-white-50 dark:hover:bg-yellow-900 text-sm font-medium !p-0 h-fit ${
               isActive &&
               "bg-yellow hover:bg-yellow dark:bg-yellow-900 dark:text-yellow-500"
             }`}

@@ -103,7 +103,7 @@
 @layer utilities {
   /* Search Form */
   .search-form {
-    @apply absolute w-[88%] md:ml-auto md:mr-5 xl:mx-auto lg:w-fit lg:relative flex items-center gap-4 py-2 px-8 rounded-full focus-within:rounded-t-3xl focus-within:rounded-b-none focus-within:border-b-2 focus-within:border-gray-400 dark:focus-within:border-gray-600 bg-white-50 hover:bg-white-100 focus-within:bg-white-100 dark:bg-dark-50 focus-within:dark:bg-gray-800 hover:dark:bg-gray-800  transition-colors top-[-3000px] left-1/2 -translate-x-1/2 lg:translate-x-0 lg:left-0 lg:top-0;
+    @apply absolute w-[88%] md:ml-auto md:mr-5 xl:mx-auto lg:w-fit lg:relative flex items-center gap-4 py-2 px-5 rounded-full focus-within:rounded-t-3xl focus-within:rounded-b-none focus-within:border-b-2 focus-within:border-gray-400 dark:focus-within:border-gray-600 bg-white-50 hover:bg-white-100 focus-within:bg-white-100 dark:bg-dark-50 focus-within:dark:bg-gray-800 hover:dark:bg-gray-800  transition-colors top-[-3000px] left-1/2 -translate-x-1/2 lg:translate-x-0 lg:left-0 lg:top-0;
   }
 
   .search-form.active {
@@ -147,6 +147,7 @@
 
   .carousel-slider::-webkit-scrollbar-track {
     @apply bg-white-100 rounded-full dark:bg-dark-50;
+    scroll-behavior: smooth;
   }
 
   .carousel-slider::-webkit-scrollbar {
