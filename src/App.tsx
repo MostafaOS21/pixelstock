@@ -18,11 +18,14 @@ import CuratedPhotosPage from "./pages/CuratedPhotosPage";
 import PopularVideosPage from "./pages/PopularVideosPage";
 import FeaturedCollectionsPage from "./pages/FeaturedCollectionsPage";
 import SingleCollectionPage from "./pages/SingleCollectionPage";
+import Footer from "./components/shared/Footer";
 
 function App() {
   const dispatch = useDispatch();
   const { pathname } = useLocation();
   const pattern = /^(\/photo|\/video)\/(\d+)$/;
+  const singlePagePattern = /(\/video\/\d+)|(\/photo\/\d+)/;
+  const singlePageMatch = singlePagePattern.test(pathname);
   const match = !pattern.test(pathname);
 
   useEffect(() => {
@@ -60,11 +63,11 @@ function App() {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route
-              path={"photo/:id"}
+              path={"/photo/:id"}
               element={<SingleItemPage type="photo" />}
             />
             <Route
-              path={"video/:id"}
+              path={"/video/:id"}
               element={<SingleItemPage type="video" />}
             />
             <Route path={"favorites"} element={<FavoritesPage />} />
@@ -82,6 +85,7 @@ function App() {
             <Route path="/collection/:id" element={<SingleCollectionPage />} />
             <Route path="*" element={<Navigate to={"/"} />} />
           </Routes>
+          {(pathname === "/" || singlePageMatch) && <Footer />}
         </main>
       </div>
     </>
