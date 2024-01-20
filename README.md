@@ -1,3 +1,7 @@
+![photo_2024-01-21_01-15-55](https://github.com/MostafaOS21/pixelstock/assets/81161532/eb3d1c19-be14-461f-bed9-eb8d4fc1ab07)
+
+
+
 # PixelStock: A Powerful Media Access Platform
 
 PixelStock is a cutting-edge React application leveraging the Pexels API to provide users with seamless access to high-quality videos, photos, and curated collections for enhanced navigation.
