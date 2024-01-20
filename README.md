@@ -1,30 +1,32 @@
-# React + TypeScript + Vite
+# PixelStock: A Powerful Media Access Platform
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+PixelStock is a cutting-edge React application leveraging the Pexels API to provide users with seamless access to high-quality videos, photos, and curated collections for enhanced navigation.
 
-Currently, two official plugins are available:
+## Technologies Used:
+- React
+- Redux
+- Redux Toolkit
+- ShadeUI
+- Tailwind
+- Axios
+- React Custom Hooks
+- Preact Signals for improved performance
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+✅ Implemented new powerful features such as Preact Signals to boost overall application performance.
 
-## Expanding the ESLint configuration
+## Key Features:
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+📌 **Masonry Grid with CSS:**
+   - Utilized CSS to create a visually appealing Masonry grid for optimal media display.
 
-- Configure the top-level `parserOptions` property like this:
+📌 **Data Filtering:**
+   - Implemented advanced filtering mechanisms to enrich the user experience by refining incoming data.
 
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
-```
+📌 **Responsive Design:**
+   - Ensured a responsive design to provide a seamless experience across all screen sizes.
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+📌 **Favorites:**
+   - Incorporated a "Favorites" feature allowing users to save and store their preferred photos and videos.
+
+📌 **CSS Grid Utilization:**
+   - Leveraged the power of CSS grid for efficient and flexible layout design.
